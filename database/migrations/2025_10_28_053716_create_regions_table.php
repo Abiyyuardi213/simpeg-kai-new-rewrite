@@ -11,11 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('role', function (Blueprint $table) {
+        Schema::create('regions', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->string('role_name');
-            $table->text('role_description');
-            $table->boolean('role_status');
+            $table->string('region_name');
+            $table->text('region_description')->nullable();
+            $table->boolean('region_status')->default(true);
             $table->timestamps();
         });
     }
@@ -25,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('role');
+        Schema::dropIfExists('regions');
     }
 };

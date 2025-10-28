@@ -14,12 +14,10 @@ class Role extends Model
     protected $fillable = [
         'role_name',
         'role_description',
-        'role_salary',
         'role_status',
     ];
 
     protected $casts = [
-        'role_salary' => 'decimal:2',
         'role_status' => 'boolean',
     ];
 
@@ -37,7 +35,6 @@ class Role extends Model
         return self::create([
             'role_name' => $data['role_name'],
             'role_description' => $data['role_description'] ?? null,
-            'role_salary' => $data['role_salary'],
             'role_status' => $data['role_status'] ?? true,
         ]);
     }
@@ -47,7 +44,6 @@ class Role extends Model
         $this->update([
             'role_name' => $data['role_name'],
             'role_description' => $data['role_description'],
-            'role_salary' => $data['role_salary'] ?? $this->role_salary,
             'role_status' => $data['role_status'] ?? $this->role_status,
         ]);
     }
