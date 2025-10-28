@@ -23,7 +23,6 @@ class RoleController extends Controller
         $request->validate([
             'role_name' => 'required|string|max:255',
             'role_description' => 'nullable|string',
-            'role_salary' => 'required|numeric|min:0',
             'role_status' => 'required|boolean',
         ]);
 
@@ -43,7 +42,6 @@ class RoleController extends Controller
         $request->validate([
             'role_name' => 'required|string|max:255',
             'role_description' => 'nullable|string',
-            'role_salary' => 'required|numeric|min:0',
             'role_status' => 'required|boolean',
         ]);
 
