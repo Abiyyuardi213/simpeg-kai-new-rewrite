@@ -70,7 +70,7 @@
                 </li>
 
                 @php
-                    $isOfficeMenu = request()->is('office*') || request()->is('office_types*');
+                    $isOfficeMenu = request()->is('office*') || request()->is('office_types*') || request()->is('divisi*');
                 @endphp
 
                 <li class="nav-item has-treeview {{ $isOfficeMenu ? 'menu-open' : '' }}">
@@ -93,6 +93,12 @@
                             <a href="{{ url('office') }}" class="nav-link {{ request()->is('office*') && !request()->is('office_types*') ? 'active' : '' }}">
                                 <i class="fas fa-building nav-icon text-secondary"></i>
                                 <p>Master Kantor</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ url('divisi') }}" class="nav-link {{ request()->is('division*') ? 'active' : '' }}">
+                                <i class="fas fa-sitemap nav-icon text-secondary"></i>
+                                <p>Master Divisi</p>
                             </a>
                         </li>
                     </ul>

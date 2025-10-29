@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DashboardPeranController;
 use App\Http\Controllers\DivisionController;
+use App\Http\Controllers\JabatanController;
 use App\Http\Controllers\OfficeController;
 use App\Http\Controllers\OfficeTypeController;
 use App\Http\Controllers\RegionController;
@@ -32,3 +33,6 @@ Route::resource('office', OfficeController::class);
 
 Route::post('divisi/{id}/toggle-status', [DivisionController::class, 'toggleStatus'])->name('divisi.toggleStatus');
 Route::resource('divisi', DivisionController::class);
+
+Route::post('jabatan/{id}/toggle-status', [JabatanController::class, 'toggleStatus'])->name('jabatan.toggleStatus');
+Route::resource('jabatan', JabatanController::class);
