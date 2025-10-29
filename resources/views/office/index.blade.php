@@ -107,6 +107,9 @@
                                                         {{ $office->office_status ? 'checked' : '' }}>
                                                 </td>
                                                 <td class="text-center">
+                                                    <a href="{{ route('office.show', $office->id) }}" class="btn btn-secondary btn-sm">
+                                                        <i class="fas fa-eye"></i> Lihat
+                                                    </a>
                                                     <a href="{{ route('office.edit', $office->id) }}" class="btn btn-info btn-sm">
                                                         <i class="fas fa-edit"></i> Edit
                                                     </a>

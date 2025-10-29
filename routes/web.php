@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DashboardPeranController;
+use App\Http\Controllers\DivisionController;
 use App\Http\Controllers\OfficeController;
 use App\Http\Controllers\OfficeTypeController;
 use App\Http\Controllers\RegionController;
@@ -28,3 +29,6 @@ Route::resource('office_types', OfficeTypeController::class);
 
 Route::post('office/{id}/toggle-status', [OfficeController::class, 'toggleStatus'])->name('office.toggleStatus');
 Route::resource('office', OfficeController::class);
+
+Route::post('divisi/{id}/toggle-status', [DivisionController::class, 'toggleStatus'])->name('divisi.toggleStatus');
+Route::resource('divisi', DivisionController::class);

@@ -68,6 +68,35 @@
                         </li>
                     </ul>
                 </li>
+
+                @php
+                    $isOfficeMenu = request()->is('office*') || request()->is('office_types*');
+                @endphp
+
+                <li class="nav-item has-treeview {{ $isOfficeMenu ? 'menu-open' : '' }}">
+                    <a href="#" class="nav-link {{ $isOfficeMenu ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-building text-primary"></i>
+                        <p>
+                            Master Office & Divisi
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+
+                    <ul class="nav nav-treeview" style="{{ $isOfficeMenu ? 'display:block;' : '' }}">
+                        <li class="nav-item">
+                            <a href="{{ url('office_types') }}" class="nav-link {{ request()->is('office_types*') ? 'active' : '' }}">
+                                <i class="fas fa-layer-group nav-icon text-secondary"></i>
+                                <p>Master Jenis Kantor</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ url('office') }}" class="nav-link {{ request()->is('office*') && !request()->is('office_types*') ? 'active' : '' }}">
+                                <i class="fas fa-building nav-icon text-secondary"></i>
+                                <p>Master Kantor</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
             </ul>
         </nav>
     </div>

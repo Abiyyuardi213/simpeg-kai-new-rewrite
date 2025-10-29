@@ -76,6 +76,12 @@ class OfficeController extends Controller
             ->with('success', 'Data kantor berhasil diperbarui.');
     }
 
+    public function show($id)
+    {
+        $office = Office::with(['region', 'officeType'])->findOrFail($id);
+        return view('office.show', compact('office'));
+    }
+
     public function destroy($id)
     {
         $office = Office::findOrFail($id);
