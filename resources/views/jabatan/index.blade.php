@@ -92,7 +92,7 @@
                                             <td>{{ $index + 1 }}</td>
                                             <td>{{ $jabatan->jabatan_name }}</td>
                                             <td>{{ $jabatan->jabatan_code }}</td>
-                                            <td>Rp {{ number_format($jabatan->jabatan_salary, 0, ',', '.') }}</td>
+                                            <td>Rp {{ number_format($jabatan->jabatan_sallary, 0, ',', '.') }}</td>
                                             <td>{{ $jabatan->jabatan_description ?? '-' }}</td>
                                             <td class="text-center">
                                                 <input type="checkbox" class="toggle-status"

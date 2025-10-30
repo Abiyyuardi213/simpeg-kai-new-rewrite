@@ -69,11 +69,11 @@
 
                             <!-- Gaji Jabatan -->
                             <div class="form-group">
-                                <label for="jabatan_salary">Gaji Jabatan (Rp)</label>
-                                <input type="number" name="jabatan_salary" id="jabatan_salary"
-                                       class="form-control @error('jabatan_salary') is-invalid @enderror"
-                                       value="{{ old('jabatan_salary', $jabatan->jabatan_salary) }}" required min="0">
-                                @error('jabatan_salary')
+                                <label for="jabatan_sallary">Gaji Jabatan (Rp)</label>
+                                <input type="number" name="jabatan_sallary" id="jabatan_sallary"
+                                       class="form-control @error('jabatan_sallary') is-invalid @enderror"
+                                       value="{{ old('jabatan_sallary', $jabatan->jabatan_sallary) }}" required min="0">
+                                @error('jabatan_sallary')
                                     <span class="invalid-feedback">{{ $message }}</span>
                                 @enderror
                             </div>

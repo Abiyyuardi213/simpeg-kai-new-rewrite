@@ -1,4 +1,3 @@
-<!-- Sidebar ala SB Admin Pro -->
 <aside class="main-sidebar sidebar-light-primary elevation-1" style="background-color: #f8f9fc;">
     <a href="{{ url('dashboard') }}" class="d-flex justify-content-center align-items-center py-3" style="background-color: #fff;">
         <img src="{{ asset('image/kai.png') }}"
@@ -70,9 +69,8 @@
                 </li>
 
                 @php
-                    $isOfficeMenu = request()->is('office*') || request()->is('office_types*') || request()->is('divisi*');
+                    $isOfficeMenu = request()->is('office*') || request()->is('office_types*') || request()->is('divisi*') || request()->is('jabatan*');
                 @endphp
-
                 <li class="nav-item has-treeview {{ $isOfficeMenu ? 'menu-open' : '' }}">
                     <a href="#" class="nav-link {{ $isOfficeMenu ? 'active' : '' }}">
                         <i class="nav-icon fas fa-building text-primary"></i>
@@ -96,9 +94,15 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ url('divisi') }}" class="nav-link {{ request()->is('division*') ? 'active' : '' }}">
+                            <a href="{{ url('divisi') }}" class="nav-link {{ request()->is('divisi*') ? 'active' : '' }}">
                                 <i class="fas fa-sitemap nav-icon text-secondary"></i>
                                 <p>Master Divisi</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ url('jabatan') }}" class="nav-link {{ request()->is('jabatan*') ? 'active' : '' }}">
+                                <i class="fas fa-briefcase nav-icon text-secondary"></i>
+                                <p>Master Jabatan</p>
                             </a>
                         </li>
                     </ul>
