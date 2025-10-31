@@ -58,19 +58,6 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="role_salary">Gaji Peran</label>
-                                <input type="number" step="0.01" min="0"
-                                    class="form-control @error('role_salary') is-invalid @enderror"
-                                    name="role_salary"
-                                    value="{{ old('role_salary', $role->role_salary) }}"
-                                    required
-                                    placeholder="Masukkan gaji peran">
-                                @error('role_salary')
-                                    <div class="invalid-feedback">{{ $message }}</div>
-                                @enderror
-                            </div>
-
-                            <div class="form-group">
                                 <label for="role_status">Status</label>
                                 <select class="form-control @error('role_status') is-invalid @enderror" name="role_status" required>
                                     <option value="1" {{ old('role_status', $role->role_status) == 1 ? 'selected' : '' }}>Aktif</option>

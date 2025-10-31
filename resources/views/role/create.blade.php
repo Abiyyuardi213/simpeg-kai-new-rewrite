@@ -61,16 +61,6 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="role_salary">Gaji Peran</label>
-                                <input type="number" step="0.01" min="0"
-                                    class="form-control @error('role_salary') is-invalid @enderror"
-                                    name="role_salary" value="{{ old('role_salary') }}" required placeholder="Masukkan gaji peran" autocomplete="off">
-                                @error('role_salary')
-                                    <div class="invalid-feedback">{{ $message }}</div>
-                                @enderror
-                            </div>
-
-                            <div class="form-group">
                                 <label for="role_status">Status</label>
                                 <select class="form-control @error('role_status') is-invalid @enderror"
                                         name="role_status" required>

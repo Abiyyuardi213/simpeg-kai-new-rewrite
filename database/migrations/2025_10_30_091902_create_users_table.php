@@ -19,13 +19,23 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('no_telepon')->nullable();
             $table->string('password');
+
             $table->uuid('role_id');
+            $table->uuid('region_id')->nullable();
+            $table->uuid('office_id')->nullable();
+            $table->uuid('division_id')->nullable();
+            $table->uuid('jabatan_id')->nullable();
+
             $table->string('profile_picture')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
             $table->timestamps();
 
             $table->foreign('role_id')->references('id')->on('role')->onDelete('cascade');
+            $table->foreign('region_id')->references('id')->on('regions')->onDelete('set null');
+            $table->foreign('office_id')->references('id')->on('office')->onDelete('set null');
+            $table->foreign('division_id')->references('id')->on('divisions')->onDelete('set null');
+            $table->foreign('jabatan_id')->references('id')->on('jabatan')->onDelete('set null');
         });
 
         Schema::create('password_reset_tokens', function (Blueprint $table) {
@@ -36,7 +46,7 @@ return new class extends Migration
 
         Schema::create('sessions', function (Blueprint $table) {
             $table->string('id')->primary();
-            $table->foreignId('user_id')->nullable()->index();
+            $table->uuid('user_id')->nullable()->index();
             $table->string('ip_address', 45)->nullable();
             $table->text('user_agent')->nullable();
             $table->longText('payload');
@@ -49,8 +59,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
-        Schema::dropIfExists('password_reset_tokens');
         Schema::dropIfExists('sessions');
+        Schema::dropIfExists('password_reset_tokens');
+        Schema::dropIfExists('users');
     }
 };

@@ -60,7 +60,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ url('user') }}" class="nav-link">
+                            <a href="{{ url('users') }}" class="nav-link">
                                 <i class="fas fa-users-cog nav-icon text-secondary"></i>
                                 <p>Master Pengguna</p>
                             </a>
@@ -69,7 +69,7 @@
                 </li>
 
                 @php
-                    $isOfficeMenu = request()->is('office*') || request()->is('office_types*') || request()->is('divisi*') || request()->is('jabatan*');
+                    $isOfficeMenu = request()->is('region*') || request()->is('office*') || request()->is('office_types*') || request()->is('divisi*') || request()->is('jabatan*');
                 @endphp
                 <li class="nav-item has-treeview {{ $isOfficeMenu ? 'menu-open' : '' }}">
                     <a href="#" class="nav-link {{ $isOfficeMenu ? 'active' : '' }}">
@@ -81,6 +81,12 @@
                     </a>
 
                     <ul class="nav nav-treeview" style="{{ $isOfficeMenu ? 'display:block;' : '' }}">
+                        <li class="nav-item">
+                            <a href="{{ url('region') }}" class="nav-link {{ request()->is('region*') ? 'active' : '' }}">
+                                <i class="fas fa-map-marker-alt nav-icon text-secondary"></i>
+                                <p>Master Jenis Region</p>
+                            </a>
+                        </li>
                         <li class="nav-item">
                             <a href="{{ url('office_types') }}" class="nav-link {{ request()->is('office_types*') ? 'active' : '' }}">
                                 <i class="fas fa-layer-group nav-icon text-secondary"></i>
