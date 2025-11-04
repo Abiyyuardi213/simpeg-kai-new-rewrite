@@ -96,6 +96,16 @@
                                     </div>
 
                                     <div class="form-group">
+                                        <label for="region_id">Region</label>
+                                        <select name="region_id" id="region_id" class="form-control">
+                                            <option value="">-- Pilih Region --</option>
+                                            @foreach($regions as $region)
+                                                <option value="{{ $region->id }}">{{ $region->region_name }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group">
                                         <label for="office_id">Office</label>
                                         <select name="office_id" id="office_id" class="form-control" required>
                                             <option value="">-- Pilih Office --</option>

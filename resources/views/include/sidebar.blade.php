@@ -84,7 +84,7 @@
                         <li class="nav-item">
                             <a href="{{ url('region') }}" class="nav-link {{ request()->is('region*') ? 'active' : '' }}">
                                 <i class="fas fa-map-marker-alt nav-icon text-secondary"></i>
-                                <p>Master Jenis Region</p>
+                                <p>Master Region</p>
                             </a>
                         </li>
                         <li class="nav-item">
